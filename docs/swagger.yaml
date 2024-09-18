@@ -1,0 +1,71 @@
+definitions:
+  models.Character:
+    properties:
+      character_id:
+        type: integer
+      class:
+        type: string
+      level:
+        type: integer
+      name:
+        type: string
+      player_id:
+        type: integer
+      race:
+        type: string
+    type: object
+  models.Player:
+    properties:
+      characters:
+        items:
+          $ref: '#/definitions/models.Character'
+        type: array
+      name:
+        type: string
+      player_id:
+        type: integer
+      signup_date:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /players:
+    get:
+      consumes:
+      - application/json
+      description: Get a list of all players including their characters
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Player'
+            type: array
+      summary: Retrieve all players
+      tags:
+      - players
+    post:
+      consumes:
+      - application/json
+      description: Create a new player and return the created player object
+      parameters:
+      - description: Player object to be created
+        in: body
+        name: player
+        required: true
+        schema:
+          $ref: '#/definitions/models.Player'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.Player'
+      summary: Create a new player
+      tags:
+      - players
+swagger: "2.0"

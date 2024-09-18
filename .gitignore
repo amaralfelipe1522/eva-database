@@ -1,0 +1,53 @@
+.env
+
+# Binários gerados
+*.exe
+*.dll
+*.so
+*.dylib
+*.bin
+
+# Diretório bin
+bin/
+out/
+dist/
+
+# Dependências do Go gerenciadas com módulos
+vendor/
+
+# Diretórios de compilação e caches
+*.log
+*.lock
+*.tmp
+*.swp
+*.swo
+
+# Arquivos temporários criados pelo editor ou sistema
+*.tmp
+*.bak
+*.old
+*.orig
+*.swp
+*.swo
+
+# Arquivos de cache do Go
+*.test
+*.prof
+*.trace
+
+# Diretório de cache do Go
+/go/
+
+# Arquivos específicos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Excluir resultados de testes de benchmark
+bench.out
+
+# Arquivos criados pelo sistema de compilação ou ferramentas
+coverage.out
+debug/
+profile.out
+
+# Configurações do editor (por exemplo, VSCode, IntelliJ, etc
