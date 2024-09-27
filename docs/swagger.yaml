@@ -24,8 +24,8 @@ definitions:
         type: string
       player_id:
         type: integer
-      signup_date:
-        type: string
+    required:
+    - name
     type: object
 info:
   contact: {}

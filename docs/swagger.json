@@ -89,6 +89,9 @@
         },
         "models.Player": {
             "type": "object",
+            "required": [
+                "name"
+            ],
             "properties": {
                 "characters": {
                     "type": "array",
@@ -101,9 +104,6 @@
                 },
                 "player_id": {
                     "type": "integer"
-                },
-                "signup_date": {
-                    "type": "string"
                 }
             }
         }

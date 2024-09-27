@@ -36,3 +36,11 @@ type SessionParticipant struct {
 	PlayerID    uint `json:"player_id"`
 	CharacterID uint `json:"character_id"`
 }
+
+type ResponseMessage struct {
+	Message string `json:"message"`
+}
+
+type ErrorMessage struct {
+	Error string `json:"error"`
+}

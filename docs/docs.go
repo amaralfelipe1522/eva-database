@@ -100,6 +100,9 @@ const docTemplate = `{
         },
         "models.Player": {
             "type": "object",
+            "required": [
+                "name"
+            ],
             "properties": {
                 "characters": {
                     "type": "array",
@@ -112,9 +115,6 @@ const docTemplate = `{
                 },
                 "player_id": {
                     "type": "integer"
-                },
-                "signup_date": {
-                    "type": "string"
                 }
             }
         }

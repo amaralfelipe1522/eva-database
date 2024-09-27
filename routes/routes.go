@@ -20,5 +20,9 @@ func SetupRouter(db *gorm.DB) *mux.Router {
 		controllers.CreatePlayer(db, w, r)
 	}).Methods("POST")
 
+	router.HandleFunc("/players/{id}", func(w http.ResponseWriter, r *http.Request) {
+		controllers.DeletePlayer(db, w, r)
+	}).Methods("DELETE")
+
 	return router
 }
