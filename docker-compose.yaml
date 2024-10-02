@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  # Serviço da API em Go
+  api:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=amaral
+      - DB_PASSWORD=1522
+      - DB_NAME=evadb
+    depends_on:
+      - db
+
+  # Serviço do PostgreSQL
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: evadb
+      POSTGRES_USER: amaral
+      POSTGRES_PASSWORD: 1522
+    ports:
+      - "5432:5432"
